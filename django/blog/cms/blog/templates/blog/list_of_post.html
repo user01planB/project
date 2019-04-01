@@ -1,0 +1,12 @@
+{% extendes 'blog/base.html' %}
+
+{% block title %} List of blog post{% endblock%}
+
+{% block content %}
+    {% for posts in post %}
+        <h2>{{ post.title }}</h2>
+        <p>wrtten by {{posts.author}} on {{posts.published}}</p>
+        <br>
+        {{posts.content|truncatewords:40|linebreaks}}
+    {% endfor %}
+{% endblock %}
